@@ -112,22 +112,20 @@ font-size:13px;
 
 <input class="search" type="text" id="search" placeholder="Пошук набору...">
 
-<div class="controls-panel">
-  
 <div class="row-picker">
-<label for="columnsSelect">Кількість наборів у ряд:</label>
-
-<select id="columnsSelect" class="nice-select" onchange="changeColumns(this.value)">
-<option value="2">2 💋</option>
-<option value="3">3 💚</option>
-<option value="4" selected>4 ✨</option>
-<option value="5">5 🌸</option>
-<option value="6">6 💎</option>
-</select>
+    <label for="columnsSelect">Кількість у ряд:</label>
+    <div class="select-wrapper">
+        <select id="columnsSelect" class="nice-select" onchange="updateGrid(this.value)">
+            <option value="2">2 🩷</option>
+            <option value="3">3 💚</option>
+            <option value="4" selected>4 ✨</option>
+            <option value="5">5 🌸</option>
+            <option value="6">6 💎</option>
+        </select>
+    </div>
 </div>
 
-</div>
-
+  
 <div class="buttons">
 <button onclick="filterTag('all')">Усі</button>
 <button onclick="filterTag('крем')">Крем</button>
