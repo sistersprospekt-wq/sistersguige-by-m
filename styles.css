@@ -51,3 +51,24 @@ body{
     background: linear-gradient(135deg, #fff0f5, #f0fff4) padding-box;
     border-color: #a8e6cf;
 }
+
+
+/* Эффект при клике */
+.nice-select:focus {
+    background: linear-gradient(135deg, #fff0f5, #f0fff4) padding-box;
+    border-color: #a8e6cf;
+}
+
+.products-grid {
+    display: grid;
+    gap: 20px; /* расстояние между карточками */
+    grid-template-columns: repeat(4, 1fr); /* по умолчанию 4 колонки */
+    transition: grid-template-columns 0.4s ease;
+}
+
+/* Для мобилок (чтобы всегда было 2 в ряд, если экран маленький) */
+@media (max-width: 600px) {
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
