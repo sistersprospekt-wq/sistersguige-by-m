@@ -5,70 +5,65 @@ body{
 	color: #5C6AC4;
 }
 
-/* Контейнер для выбора количества */
+
+}
+
+/* Контейнер выбора */
 .row-picker {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    gap: 15px;
-    margin: 30px auto; /* Отступы сверху и снизу, центрирование */
-    padding: 10px;
-    flex-wrap: wrap;
-    font-family: 'Segoe UI', Roboto, sans-serif;
+    gap: 10px;
+    margin: 40px 0; /* Отступы от других элементов */
+    font-family: 'Inter', sans-serif;
+}
+
+.row-picker label {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #8e8e8e;
     font-weight: 600;
-    color: #5d4a52;
 }
 
 /* Красивый селект */
 .nice-select {
-    appearance: none; /* Убираем стандартную стрелку браузера */
-    -webkit-appearance: none;
-    padding: 12px 25px;
-    border: 2px solid transparent;
-    border-radius: 50px;
-    background: linear-gradient(white, white) padding-box, 
-                linear-gradient(135deg, #ffcfe2, #c1f0cc) border-box; /* Градиентная рамка */
+    appearance: none;
+    background: #ffffff;
+    border: 2px solid #f0f0f0;
+    border-radius: 16px;
+    padding: 12px 40px 12px 20px;
     font-size: 16px;
-    font-weight: bold;
-    color: #4a6d5c;
+    font-weight: 700;
+    color: #333;
     cursor: pointer;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
-    outline: none;
-    min-width: 140px;
-    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
     transition: all 0.3s ease;
+    outline: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://w3.org' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23ffb6c1' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
 }
 
-/* Эффект при наведении */
 .nice-select:hover {
-    transform: translateY(-2px); /* Легкий подъем */
-    box-shadow: 0 12px 25px rgba(255, 182, 193, 0.3);
-    border-color: #ffb6c1;
+    border-color: #ffcfe2;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 182, 193, 0.2);
 }
 
-/* Эффект при клике */
-.nice-select:focus {
-    background: linear-gradient(135deg, #fff0f5, #f0fff4) padding-box;
-    border-color: #a8e6cf;
-}
-
-
-/* Эффект при клике */
-.nice-select:focus {
-    background: linear-gradient(135deg, #fff0f5, #f0fff4) padding-box;
-    border-color: #a8e6cf;
-}
-
-.products-grid {
-    display: grid;
-    gap: 20px; /* расстояние между карточками */
-    grid-template-columns: repeat(4, 1fr); /* по умолчанию 4 колонки */
+/* ЛОГИКА СЕТКИ (Применится к вашим товарам) */
+.your-container-class { 
+    display: grid !important;
+    /* По умолчанию 4, или то, что выберет пользователь */
+    grid-template-columns: repeat(var(--columns, 4), 1fr) !important;
+    gap: 20px;
     transition: grid-template-columns 0.4s ease;
 }
 
-/* Для мобилок (чтобы всегда было 2 в ряд, если экран маленький) */
-@media (max-width: 600px) {
-    .products-grid {
+/* Адаптация для мобильных (чтобы не ломалось на телефонах) */
+@media (max-width: 768px) {
+    .your-container-class {
         grid-template-columns: repeat(2, 1fr) !important;
     }
+    .row-picker { display: none; } /* Прячем выбор на мобилках */
 }
