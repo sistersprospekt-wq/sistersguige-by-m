@@ -4,3 +4,50 @@ body{
 .title {
 	color: #5C6AC4;
 }
+
+/* Контейнер для выбора количества */
+.row-picker {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin: 30px auto; /* Отступы сверху и снизу, центрирование */
+    padding: 10px;
+    flex-wrap: wrap;
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    font-weight: 600;
+    color: #5d4a52;
+}
+
+/* Красивый селект */
+.nice-select {
+    appearance: none; /* Убираем стандартную стрелку браузера */
+    -webkit-appearance: none;
+    padding: 12px 25px;
+    border: 2px solid transparent;
+    border-radius: 50px;
+    background: linear-gradient(white, white) padding-box, 
+                linear-gradient(135deg, #ffcfe2, #c1f0cc) border-box; /* Градиентная рамка */
+    font-size: 16px;
+    font-weight: bold;
+    color: #4a6d5c;
+    cursor: pointer;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    outline: none;
+    min-width: 140px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+/* Эффект при наведении */
+.nice-select:hover {
+    transform: translateY(-2px); /* Легкий подъем */
+    box-shadow: 0 12px 25px rgba(255, 182, 193, 0.3);
+    border-color: #ffb6c1;
+}
+
+/* Эффект при клике */
+.nice-select:focus {
+    background: linear-gradient(135deg, #fff0f5, #f0fff4) padding-box;
+    border-color: #a8e6cf;
+}
