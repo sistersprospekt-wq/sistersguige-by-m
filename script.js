@@ -1,13 +1,16 @@
 
+<script>
 function updateGrid(count) {
-    // ЗАМЕНИТЕ '.your-container-class' на имя класса вашего блока с товарами
-    const grid = document.querySelector('.your-container-class');
+    // Ищем ваш контейнер .grid-container
+    const grid = document.querySelector('.grid-container');
     if (grid) {
-        grid.style.setProperty('--columns', count);
+        // Меняем количество колонок через CSS-переменную
+        grid.style.setProperty('--cols', count);
     }
 }
 
-// Устанавливаем значение при загрузке (чтобы совпадало с 'selected' в HTML)
+// Принудительно устанавливаем 4 колонки при старте
 document.addEventListener('DOMContentLoaded', () => {
-    updateGrid(document.getElementById('columnsSelect').value);
+    updateGrid(4);
 });
+</script>
