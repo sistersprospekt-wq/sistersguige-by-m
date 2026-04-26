@@ -8,62 +8,52 @@ body{
 
 }
 
-/* Контейнер выбора */
+/* Блок выбора */
 .row-picker {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    gap: 10px;
-    margin: 40px 0; /* Отступы от других элементов */
-    font-family: 'Inter', sans-serif;
+    gap: 15px;
+    margin: 40px 0 20px 0; /* Отступы: сверху 40px, снизу 20px */
 }
 
 .row-picker label {
-    font-size: 14px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: #8e8e8e;
-    font-weight: 600;
+    font-weight: bold;
+    color: #5d4a52;
 }
 
-/* Красивый селект */
+/* Красивая кнопка-селект */
 .nice-select {
-    appearance: none;
-    background: #ffffff;
-    border: 2px solid #f0f0f0;
-    border-radius: 16px;
-    padding: 12px 40px 12px 20px;
-    font-size: 16px;
-    font-weight: 700;
-    color: #333;
+    padding: 10px 20px;
+    border-radius: 25px;
+    border: 2px solid #ffe4ee;
+    background: white;
+    font-weight: bold;
     cursor: pointer;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
     outline: none;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://w3.org' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23ffb6c1' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: right 15px center;
+    transition: 0.3s;
 }
 
 .nice-select:hover {
-    border-color: #ffcfe2;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(255, 182, 193, 0.2);
+    border-color: #dff7e4;
+    transform: scale(1.05);
 }
 
-/* ЛОГИКА СЕТКИ (Применится к вашим товарам) */
-.your-container-class { 
+/* ГЛАВНОЕ: Настройка вашей сетки */
+.grid-container {
     display: grid !important;
-    /* По умолчанию 4, или то, что выберет пользователь */
-    grid-template-columns: repeat(var(--columns, 4), 1fr) !important;
+    /* По умолчанию будет 4 колонки, если JS не сработает */
+    grid-template-columns: repeat(var(--cols, 4), 1fr) !important; 
     gap: 20px;
-    transition: grid-template-columns 0.4s ease;
+    padding: 20px;
 }
 
-/* Адаптация для мобильных (чтобы не ломалось на телефонах) */
-@media (max-width: 768px) {
-    .your-container-class {
+/* Чтобы на телефонах всегда было 2 в ряд */
+@media (max-width: 600px) {
+    .grid-container {
         grid-template-columns: repeat(2, 1fr) !important;
     }
-    .row-picker { display: none; } /* Прячем выбор на мобилках */
+    .row-picker { display: none; } /* На мобилках лучше скрыть выбор */
 }
+
