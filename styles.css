@@ -1,59 +1,6 @@
-body{
-  padding: 25px;
-}
-.title {
-	color: #5C6AC4;
-}
-
-
-}
-
-/* Блок выбора */
-.row-picker {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
-    margin: 40px 0 20px 0; /* Отступы: сверху 40px, снизу 20px */
-}
-
-.row-picker label {
-    font-weight: bold;
-    color: #5d4a52;
-}
-
-/* Красивая кнопка-селект */
-.nice-select {
-    padding: 10px 20px;
-    border-radius: 25px;
-    border: 2px solid #ffe4ee;
-    background: white;
-    font-weight: bold;
-    cursor: pointer;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-    outline: none;
-    transition: 0.3s;
-}
-
-.nice-select:hover {
-    border-color: #dff7e4;
-    transform: scale(1.05);
-}
-
-/* ГЛАВНОЕ: Настройка вашей сетки */
-.grid-container {
-    display: grid !important;
-    /* По умолчанию будет 4 колонки, если JS не сработает */
-    grid-template-columns: repeat(var(--cols, 4), 1fr) !important; 
-    gap: 20px;
-    padding: 20px;
-}
-
-/* Чтобы на телефонах всегда было 2 в ряд */
-@media (max-width: 600px) {
-    .grid-container {
-        grid-template-columns: repeat(2, 1fr) !important;
-    }
-    .row-picker { display: none; } /* На мобилках лучше скрыть выбор */
+.grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:20px;
 }
 
